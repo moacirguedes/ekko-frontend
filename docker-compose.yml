@@ -1,0 +1,10 @@
+services:
+  node:
+    image: node:22-alpine
+    container_name: "node"
+    ports:
+      - "8085:5173"
+    volumes:
+      - ./:/srv/app
+    working_dir: /srv/app
+    command: sh -c 'npm install -g vite && npm install && npm run dev'
